@@ -1,0 +1,1445 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@400;500;600&display=swap');
+
+body {
+  font-family: 'Inter', sans-serif;
+}
+
+h1, h2 {
+  font-family: 'Playfair Display', serif;
+}
+
+body {
+  font-size: 20px; /* base size up from ~16 */
+  background: linear-gradient(#ffd6e8, #fff0f5);
+  font-family: "Poppins", "Quicksand", system-ui, sans-serif;
+  text-align: center;
+  height: 100vh;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.room {
+  box-shadow: 0 0 40px rgba(255, 105, 180, 0.35);
+}
+
+.room {
+  background: white;
+  width: 90vw;
+  max-width: 1100px;
+  min-height: 85vh;
+
+  margin: auto;
+  padding: 40px;
+
+  border-radius: 30px;
+  box-shadow: 0 0 30px rgba(255, 105, 180, 0.3);
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+/* 🌸 Romantic Background Room */
+.bgRoom {
+  background-image: url("background.jpg"); /* change to your image */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  padding-top: 40px;
+}
+
+/* Soft overlay for readability */
+.bgRoom::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(255, 192, 203, 0.35); /* soft pink overlay */
+  z-index: 0;
+}
+
+.bgRoom > * {
+  position: relative;
+  z-index: 1;
+}
+
+.bgRoom h1,
+.bgRoom .subtitle {
+  text-align: center;
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.startBtn {
+  padding: 18px 36px;
+  font-size: 24px;
+  border-radius: 22px;
+  border: none;
+  background: #f67aa4;
+  color: white;
+  cursor: pointer;
+}
+#quiz {
+  width: 100%;
+  max-width: 700px;
+  margin: 0 auto;          /* 🔥 this is key */
+  display: flex;
+  flex-direction: column;
+  align-items: center;     /* 🔥 center everything inside */
+}
+
+#question {
+  font-size: 32px;
+  margin: 30px 0;
+  text-align: center;   /* 🔥 ensure true centering */
+}
+.options {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.options button {
+  width: 100%;
+  max-width: 420px;
+
+  margin: 16px auto;
+  padding: 20px 28px;
+
+  font-size: 22px;
+  border-radius: 18px;
+}
+
+
+.collectBtn {
+  margin-top: 30px;
+  padding: 14px 30px;
+
+  font-size: 18px;
+  font-weight: bold;
+
+  border: none;
+  border-radius: 20px;
+
+  background: linear-gradient(135deg, #ff5f9e, #ff85b3);
+  color: white;
+
+  cursor: pointer;
+  box-shadow: 0 6px 15px rgba(255, 95, 158, 0.4);
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.collectBtn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 20px rgba(255, 95, 158, 0.5);
+}
+
+.collectBtn:active {
+  transform: scale(0.95);
+}
+
+#letterReveal {
+  font-size: 80px;
+  margin: 30px 0;
+  color: hsl(340, 85%, 70%);
+  font-weight: bold;
+}
+
+#letterBasket {
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+
+  background: white;
+  padding: 15px 25px;
+  border-radius: 20px;
+  box-shadow: 0 10px 25px rgba(255, 105, 180, 0.3);
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+
+  z-index: 999;
+}
+
+.basketTitle {
+  font-weight: 600;
+  font-size: 18px;
+  color: #ff4d88;
+}
+
+
+#basketLetters {
+  display: flex;
+  gap: 10px;
+}
+
+.basketLetter {
+  width: 50px;
+  height: 50px;
+  background: #ffe6ef;
+  border-radius: 12px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-size: 26px;
+  font-weight: bold;
+  color: #ff4d88;
+}
+
+
+
+.slot {
+  width: 40px;
+  height: 40px;
+  border: 2px dashed #ff8fb1;
+  border-radius: 10px;
+  font-size: 24px;
+  font-weight: bold;
+  color: #ff4d88;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+
+h1 {
+  color: #ff4d88;
+  font-size: 42px;
+  margin-bottom: 20px;
+  text-align: center;
+  width: 100%;
+}
+h2 {
+  font-size: 30px;
+  margin-bottom: 20px;
+}
+
+
+.subtitle {
+  font-size: 22px;
+  margin-bottom: 25px;
+  max-width: 700px;
+  text-align: center;
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.room .subtitle {
+  text-align: center;
+  display: block;
+}
+
+.rules {
+  font-size: 22px;
+  margin: 30px 0;
+  line-height: 1.8;
+}
+
+
+#feedback {
+  font-size: 18px;
+  margin-top: 15px;
+}
+
+#nextRoom {
+  margin-top: 20px;
+  padding: 12px 20px;
+  font-size: 18px;
+  background: #ff4d88;
+  color: white;
+  border: none;
+  border-radius: 15px;
+  cursor: pointer;
+}
+
+
+#maze {
+  display: grid;
+  grid-template-columns: repeat(21, 48px);
+  grid-template-rows: repeat(15, 48px);
+  gap: 0;
+  justify-content: center;
+  margin: 20px auto;
+}
+
+.cell {
+  width: 48px;
+  height: 48px;
+}
+
+.wall {
+  background: #a00404;
+}
+
+.path {
+  background: #bb8c9f;
+}
+
+.outside {
+  background: transparent;
+}
+
+
+.player {
+  background: black;
+  font-size: 26px;
+  text-align: center;
+  line-height: 40px;
+}
+
+.goal {
+  background: white;
+  font-size: 24px;
+  text-align: center;
+  line-height: 40px;
+}
+
+
+#gameArea {
+  position: relative;
+  width: 80vw;
+  max-width: 900px;
+  height: 420px;
+  margin: 30px auto;
+  background: #f1aec9;
+  border-radius: 25px;
+  overflow: hidden;
+  border: 3px solid #d5b2bd;
+}
+
+#basket {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 42px;
+}
+
+.heart {
+  position: absolute;
+  font-size: 32px;
+  top: -40px;
+  pointer-events: none;
+}
+
+#scoreText,
+#missText {
+  font-size: 24px;
+  margin: 10px 0;
+}
+
+#retryBtn {
+  margin-top: 20px;
+  padding: 12px 24px;
+  font-size: 18px;
+  border: none;
+  border-radius: 15px;
+  background: #ff6fa4;
+  color: white;
+  cursor: pointer;
+}
+
+
+#puzzleGrid {
+  width: 540px;
+  height: 540px;
+
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+
+  gap: 8px;
+  margin: 40px auto 0;   /* ✅ centers horizontally */
+
+  justify-content: center;
+  align-items: center;
+}
+
+
+.puzzlePiece {
+  width: 100%;
+  height: 100%;
+
+  background-image: url("puzzle.jpg");
+  background-size: 540px 540px; /* 🔥 must match grid size */
+
+  border-radius: 14px;
+  cursor: pointer;
+
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+
+.puzzlePiece:hover {
+  transform: scale(1.04);
+  box-shadow: 0 6px 15px rgba(255, 105, 180, 0.4);
+}
+
+.puzzlePiece.selected {
+  outline: 4px solid #ff4d88;
+}
+
+#puzzleMessage {
+  font-size: 22px;
+  margin-top: 25px;
+  color: #ff4d88;
+  font-weight: 600;
+}
+#photoPuzzleRoom {
+  justify-content: flex-start;
+  padding-top: 40px;
+}
+#photoPuzzleRoom h1 {
+  margin-bottom: 10px;
+}
+
+#photoPuzzleRoom .subtitle {
+  margin-bottom: 20px;
+}
+
+#cups {
+  position: relative;
+  width: 500px;
+  height: 150px;
+  margin: 40px auto;
+}
+
+.cup {
+  position: absolute;
+  font-size: 80px;
+  cursor: pointer;
+  transition: transform 0.6s ease;
+}
+
+.cup:nth-child(1) { transform: translateX(0px); }
+.cup:nth-child(2) { transform: translateX(160px); }
+.cup:nth-child(3) { transform: translateX(320px); }
+
+.heartIcon {
+  position: absolute;
+  top: 70px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 40px;
+}
+
+#heartContainer {
+  margin-top: 40px;
+  width: 250px;
+  height: 250px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+.crosswordWrapper {
+  display: flex;
+  justify-content: center;  
+  gap: 70px;
+  margin-top: 40px;
+  align-items: flex-start;
+}
+
+#crosswordGrid {
+  display: grid;
+  grid-template-columns: repeat(14, 52px);
+  grid-template-rows: repeat(19, 52px);
+  gap: 4px;
+}
+
+
+.crossCell {
+  width: 52px;
+  height: 52px;
+  border: 2px solid #ff8fb1;
+  border-radius: 8px;
+  text-align: center;
+  font-size: 24px;
+  font-weight: bold;
+  text-transform: uppercase;
+  outline: none;
+}
+
+
+.crossCell:focus {
+  background: #fff0f6;
+}
+
+.crossCell.block {
+  background: transparent;
+  border: none;
+}
+
+
+.clues {
+  max-width: 380px;
+  text-align: left;
+  font-size: 16px;
+}
+
+.clues h3 {
+  color: rgb(255, 88, 149);
+}
+
+#crosswordMessage {
+  margin-top: 30px;
+  font-size: 24px;
+  color: #fd77a4;
+  font-weight: bold;
+  text-align: center;
+}
+
+
+.clues {
+  max-width: 420px;
+  text-align: left;
+  font-size: 18px;
+  line-height: 1.6;
+}
+
+.clues h3 {
+  color: rgb(255, 88, 149);
+  font-size: 22px;
+  margin-bottom: 10px;
+}
+
+.clues ol {
+  padding-left: 20px;
+  color: rgb(0, 0, 0);
+}
+
+.clues li {
+  margin-bottom: 10px;
+  color: black;
+}
+
+.cellWrapper {
+  position: relative;
+  width: 52px;
+  height: 52px;
+}
+
+.cellNumber {
+  position: absolute;
+  top: 3px;
+  right: 5px;
+  font-size: 11px;
+  font-weight: bold;
+  color: black;
+  pointer-events: none;
+}
+
+.cellWrapper .crossCell {
+  width: 100%;
+  height: 100%;
+}
+#watcher {
+  font-size: 100px;
+  margin: 30px 0;
+  transition: transform 0.3s ease;
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(10px);
+  padding: 40px 50px;
+  border-radius: 25px;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+  display: inline-block;
+}
+#kissBtn {
+  width: 120px;
+  height: 120px;
+  font-size: 70px;
+  border-radius: 50%;
+  border: none;
+  background: linear-gradient(135deg, #ffffff, #fed6e5);
+  color: white;
+  cursor: pointer;
+  box-shadow: 0 10px 30px rgba(255, 77, 136, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  position: relative;
+  margin: 0 auto;
+}
+
+#kissBtn::before {
+  content: "💋";
+  font-size: 70px;
+}
+
+#kissBtn:hover {
+  transform: scale(1.1);
+  box-shadow: 0 15px 40px rgba(255, 77, 136, 0.6);
+}
+
+#kissBtn:active {
+  transform: scale(0.95);
+}
+
+#kissCount,
+#kissMessage {
+  font-size: 22px;
+  margin-top: 15px;
+}
+
+#kissRetryBtn {
+  margin-top: 20px;
+  padding: 12px 26px;
+  font-size: 18px;
+  border-radius: 20px;
+  border: none;
+  background: #ff6fa4;
+  color: white;
+  cursor: pointer;
+}
+
+
+#whackGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 120px);
+  gap: 25px;
+  justify-content: center;
+  margin: 40px 0;
+}
+
+.hole {
+  width: 120px;
+  height: 120px;
+  background: #ffe6ef;
+  border-radius: 50%;
+  box-shadow: inset 0 8px 0 #ffb6c1;
+  position: relative;
+  cursor: pointer;
+  overflow: hidden;
+}
+
+.mole {
+  position: absolute;
+  bottom: -100%;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 48px;
+  transition: bottom 0.25s ease;
+  pointer-events: none;
+}
+
+.hole.show .mole {
+  bottom: 20px;
+}
+
+#whackScore,
+#whackMiss {
+  font-size: 20px;
+}
+
+.hole.active {
+  background: #ff4d88; /* darker pink */
+  box-shadow: inset 0 6px 0 #ff2f70;
+}
+.mole {
+  transition: transform 0.15s ease;
+}
+
+.hole.active .mole {
+  transform: translateX(-50%) scale(0.9);
+}
+
+#whackRetryBtn {
+  margin-top: 20px;
+  padding: 12px 26px;
+  font-size: 18px;
+  border-radius: 20px;
+  border: none;
+  background: #ff6fa4;
+  color: white;
+  cursor: pointer;
+}
+
+#memoryGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 120px);
+  gap: 20px;
+  justify-content: center;
+  margin: 40px 0;
+}
+
+.memoryCard {
+  width: 120px;
+  height: 120px;
+  border-radius: 18px;
+  background: linear-gradient(135deg, #ffe6ef, #ffd6e8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  font-weight: 600;
+  color: transparent;
+  cursor: pointer;
+  user-select: none;
+  box-shadow: 0 10px 20px rgba(255, 105, 180, 0.25);
+  transition: transform 0.2s ease, background 0.2s ease;
+}
+
+.memoryCard.flipped,
+.memoryCard.matched {
+  background: linear-gradient(135deg, #ff4d88, #ff85b3);
+  color: white;
+}
+
+.memoryCard.matched {
+  opacity: 0.9;
+  cursor: default;
+}
+
+.memoryCard:active {
+  transform: scale(0.95);
+}
+
+#memoryMessage {
+  font-size: 22px;
+  color: #ff4d88;
+  margin-top: 20px;
+}
+#memoryTries {
+  font-size: 18px;
+  margin: 10px 0 20px;
+  color: #ff4d88;
+  font-weight: 600;
+}
+
+#memoryRetryBtn {
+  margin-top: 20px;
+  padding: 12px 26px;
+  font-size: 18px;
+  border-radius: 20px;
+  border: none;
+  background: #ff6fa4;
+  color: white;
+  cursor: pointer;
+}
+
+.finalMessage {
+  margin: 40px 0;
+  font-size: 28px;
+  font-family: 'Playfair Display', serif;
+  color: #ff4d88;
+}
+
+#finalBlanks {
+  letter-spacing: 6px;
+  font-weight: bold;
+}
+
+#letterChoices {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin: 30px 0;
+}
+
+.letterChoice {
+  width: 55px;
+  height: 55px;
+  border-radius: 14px;
+  background: linear-gradient(135deg, #ffe6ef, #ffd6e8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 22px;
+  font-weight: bold;
+  color: #ff4d88;
+  cursor: pointer;
+  box-shadow: 0 8px 18px rgba(255,105,180,0.3);
+  transition: transform 0.15s ease, background 0.15s ease;
+}
+
+.letterChoice:hover {
+  transform: translateY(-2px);
+}
+
+.letterChoice.used {
+  opacity: 0.4;
+  pointer-events: none;
+}
+
+#finalError {
+  margin-top: 15px;
+  font-size: 18px;
+  color: #ff4d88;
+}
+/* 💖 Make intro text white & bold */
+
+.subtitle {
+  color: white;
+  font-weight: 700;
+}
+
+.rules p {
+  color: rgb(255, 255, 255);
+  font-weight: 700;
+}
+
+.bgRoom h1 {
+  color: #e479ad;
+}
+
+
+.bgRoom h1 {
+  font-size: clamp(36px, 5vw, 60px);
+}
+
+.bgRoom .subtitle {
+  font-size: clamp(20px, 2.5vw, 30px);
+}
+
+.bgRoom .rules p {
+  font-size: clamp(18px, 2.2vw, 26px);
+}
+.bgRoom h1 {
+  font-size: clamp(40px, 6vw, 70px);
+  letter-spacing: 2px;
+}
+.bgRoom {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  padding-top: 40px;
+}
+
+.bgRoom h1 {
+  margin-top: 0;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.bgRoom .subtitle {
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.bgRoom .rules {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.bgRoom .rules p {
+  margin: 5px 0;
+}
+/* Quiz Room Background */
+
+#quizRoom {
+  background-image: url("quiz-bg.jpg"); /* change to your image */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Soft dark overlay for readability */
+#quizRoom::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.4);
+  z-index: 0;
+}
+
+#quizRoom > * {
+  position: relative;
+  z-index: 1;
+}
+#quizRoom h1,
+#quizRoom .subtitle,
+#quizRoom #question {
+  color: white;
+}
+#quizRoom .options button {
+  background: rgba(255, 255, 255, 0.85);
+}
+#quizRoom .options button:hover {
+  background: #ff85a2;
+}
+
+#feedback {
+  color: white;
+  font-weight: 600;
+}
+/* 🌀 Maze Room Background */
+
+#mazeRoom {
+  background-image: url("maze-bg.jpg"); /* change to your image */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Soft overlay so maze stays readable */
+#mazeRoom::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.35);
+  z-index: 0;
+}
+
+#mazeRoom > * {
+  position: relative;
+  z-index: 1;
+}
+#mazeRoom h1,
+#mazeRoom .subtitle,
+#mazeRoom #mazeMessage {
+  color: white;
+}
+/* Heart Room Background */
+
+#heartRoom {
+  background-image: url("heart-room-bg.jpg"); /* change this */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Soft overlay so text stays readable */
+#heartRoom::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(255, 192, 203, 0.25);
+  z-index: 0;
+}
+
+#heartRoom > * {
+  position: relative;
+  z-index: 1;
+}
+#heartRoom h1,
+#heartRoom .subtitle,
+#heartRoom #scoreText,
+#heartRoom #missText {
+  color: white;
+}
+
+/* 💕 Heart Catcher Meters */
+
+.heartMeterWrapper {
+  margin: 25px auto 0;
+  max-width: 400px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+.meterBlock {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+
+.meterBar {
+  width: 100%;
+  height: 18px;
+  background: rgba(255,255,255,0.3);
+  border-radius: 50px;
+  overflow: hidden;
+}
+
+#heartFill {
+  height: 100%;
+  width: 0%;
+  background: linear-gradient(90deg, #ff4d88, #ff85b3);
+  border-radius: 50px;
+  transition: width 0.3s ease;
+}
+
+#heartText {
+  color: white;
+  font-weight: 600;
+}
+
+.livesBlock {
+  font-size: 26px;
+  display: flex;
+  gap: 12px;
+}
+
+.livesBlock span {
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.livesBlock span.lost {
+  opacity: 0.3;
+  transform: scale(0.8);
+}
+
+/* 🧩 Puzzle Room Background */
+
+#photoPuzzleRoom {
+  background-image: url("puzzle-room-bg.jpg"); /* change this */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  position: relative;
+  overflow: hidden;
+}
+#photoPuzzleRoom::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.35); /* adjust darkness here */
+  z-index: 0;
+}
+
+#photoPuzzleRoom > * {
+  position: relative;
+  z-index: 1;
+}
+#photoPuzzleRoom h1,
+#photoPuzzleRoom .subtitle,
+#photoPuzzleRoom #puzzleMessage {
+  color: white;
+}
+/* 🥤 Cup Room Background */
+
+#cupRoom {
+  background-image: url("cup-room-bg.jpg"); /* change this */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  position: relative;
+  overflow: hidden;
+}
+#cupRoom::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(255, 192, 203, 0.25);
+
+  z-index: 0;
+}
+
+#cupRoom > * {
+  position: relative;
+  z-index: 1;
+}
+#cupRoom h1,
+#cupRoom .subtitle,
+#cupRoom #cupMessage {
+  color: white;
+}
+/* 🧩 Crossword Room Background */
+
+#crosswordRoom {
+  background-image: url("crossword-bg.jpg"); /* change this */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  position: relative;
+  overflow: hidden;
+}
+#crosswordRoom::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(255, 192, 203, 0.25);
+  z-index: 0;
+}
+
+#crosswordRoom > * {
+  position: relative;
+  z-index: 1;
+}
+#crosswordRoom h1,
+#crosswordRoom .subtitle,
+#crosswordRoom .clues,
+#crosswordRoom #crosswordMessage {
+  color: white;
+}
+
+.clues {
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(10px);
+  padding: 25px 30px;
+  border-radius: 20px;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+  color: rgb(255, 88, 149);
+}
+/* 😘 Kiss Room Background */
+
+#kissRoom {
+  background-image: url("kiss-bg.jpg"); /* change this */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  position: relative;
+  overflow: hidden;
+}
+#kissRoom::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(255, 192, 203, 0.25);
+  z-index: 0;
+}
+
+#kissRoom > * {
+  position: relative;
+  z-index: 1;
+}
+#kissRoom h1,
+#kissRoom .subtitle,
+#kissRoom #kissCount,
+#kissRoom #kissMessage {
+  color: white;
+}
+/* 💋 Kiss Progress Meter */
+
+.kissMeterWrapper {
+  margin: 25px auto 0 auto;   /* centers horizontally */
+  width: 100%;
+  max-width: 400px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.kissMeter {
+  width: 100%;
+  height: 18px;
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 50px;
+  overflow: hidden;
+}
+.kissMeterWrapper {
+  max-width: 350px;
+}
+
+#kissFill {
+  height: 100%;
+  width: 0%;
+  background: linear-gradient(90deg, #ff4d88, #ff85b3);
+  border-radius: 50px;
+  transition: width 0.3s ease;
+}
+
+#kissText {
+  font-weight: 600;
+  color: white;
+  font-size: 16px;
+}
+/* 💘 Whack Room Background */
+
+#whackRoom {
+  background-image: url("whack-bg.jpg"); /* change this */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  position: relative;
+  overflow: hidden;
+}
+
+#whackRoom::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.4);
+  z-index: 0;
+}
+
+#whackRoom > * {
+  position: relative;
+  z-index: 1;
+}
+#whackRoom h1,
+#whackRoom .subtitle {
+  color: white;
+}
+/* 💘 Whack Meters */
+
+.whackMeterWrapper {
+  margin: 25px auto 0;
+  max-width: 400px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+/* ❤️ Progress Bar */
+.meterBlock {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+
+.meterBar {
+  width: 100%;
+  height: 18px;
+  background: rgba(255,255,255,0.3);
+  border-radius: 50px;
+  overflow: hidden;
+}
+
+#whackFill {
+  height: 100%;
+  width: 0%;
+  background: linear-gradient(90deg, #ff4d88, #ff85b3);
+  border-radius: 50px;
+  transition: width 0.3s ease;
+}
+
+#whackText {
+  color: white;
+  font-weight: 600;
+}
+
+/* 💔 Lives Display */
+.livesBlock {
+  font-size: 26px;
+  display: flex;
+  gap: 12px;
+}
+
+.livesBlock span {
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.livesBlock span.lost {
+  opacity: 0.3;
+  transform: scale(0.8);
+}
+
+/* 💗 Memory Room Background */
+
+#memoryRoom {
+  background-image: url("memory-bg.jpg"); /* change this */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  position: relative;
+  overflow: hidden;
+}
+#memoryRoom::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(255, 192, 203, 0.25);
+  z-index: 0;
+}
+
+#memoryRoom > * {
+  position: relative;
+  z-index: 1;
+}
+#memoryRoom h1,
+#memoryRoom .subtitle,
+#memoryRoom #memoryTries,
+#memoryRoom #memoryMessage {
+  color: white;
+}
+#memoryGrid {
+  background: rgba(255, 255, 255, 0.15);
+  padding: 20px;
+  border-radius: 25px;
+  backdrop-filter: blur(6px);
+}
+/* 🔐 Final Door Background */
+
+#finalDoorRoom {
+  background-image: url("final-bg.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  position: relative;
+  overflow: hidden;
+
+  transition: background 0.8s ease, opacity 0.8s ease;
+}
+
+#finalDoorRoom::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(255, 192, 203, 0.3);
+  z-index: 0;
+}
+/* 🔐 Final Door Fade Background */
+
+#finalDoorRoom {
+  position: relative;
+  transition: opacity 0.8s ease;
+}
+
+#finalDoorRoom.removeBg {
+  background-image: none !important;
+}
+
+#finalDoorRoom.fadeWhite::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: white;
+  z-index: 5;
+  opacity: 1;
+  transition: opacity 0.8s ease;
+}
+
+
+#finalDoorRoom > * {
+  position: relative;
+  z-index: 1;
+}
+#finalDoorRoom h1,
+#finalDoorRoom .subtitle,
+#finalDoorRoom .finalMessage,
+#finalDoorRoom #finalError {
+  color: black;
+}
+
+#finalDoorRoom h1 {
+  text-shadow: 0 0 20px rgba(255, 77, 136, 0.8);
+}
+/* 💖 Background disappears */
+
+#finalDoorRoom.noBackground {
+  background-image: none;
+}
+#crosswordRoom ol {
+  font-weight: bold;
+}
+.bgRoom .subtitle {
+  text-align: center;
+  width: 100%;
+}
+#mazeRoom h1,
+#mazeRoom .subtitle {
+  text-align: center;
+  width: 100%;
+}
+
+
+#question {
+  font-size: 36px;
+  font-weight: bold;
+}
+
+#feedback {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+
+
+#scoreText,
+#missText {
+  font-size: 28px;
+  font-weight: bold;
+}
+
+#heartText {
+  font-size: 22px;
+  font-weight: bold;
+}
+
+
+
+#cupMessage {
+  font-size: 28px;
+  font-weight: bold;
+}
+
+
+#puzzleMessage {
+  font-size: 28px;
+  font-weight: bold;
+}
+
+
+
+
+#crosswordMessage {
+  font-size: 28px;
+  font-weight: bold;
+}
+
+
+
+
+#kissCount,
+#kissMessage {
+  font-size: 28px;
+  font-weight: bold;
+}
+
+#kissText {
+  font-size: 22px;
+  font-weight: bold;
+}
+
+
+
+
+#whackText {
+  font-size: 22px;
+  font-weight: bold;
+}
+
+
+
+#memoryMessage {
+  font-size: 28px;
+  font-weight: bold;
+}
+
+#memoryTries {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+
+
+
+#finalError {
+  font-size: 26px;
+  font-weight: bold;
+}

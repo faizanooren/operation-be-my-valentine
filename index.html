@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>LOCKED IN LOVE</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+
+</head>
+<body>
+  
+<div id="letterBasket" style="display:none;">
+  <span class="basketTitle">🧺 Letters Collected</span>
+  <div id="basketLetters"></div>
+</div>
+
+
+
+  <div id="introRoom" class="room bgRoom" id="startRoom">
+
+
+  <h1>LOCKED IN LOVE </h1>
+
+  <p class="subtitle">
+    Operation: Be my Valentine is underway.
+  </p>
+
+  <div class="rules">
+    <p> Every room unlocks a clue</p>
+    <p> Collect the clues, decode the love</p>
+    <p> Your love trial begins now!</p>
+  </div>
+
+  <button class="startBtn" onclick="startGame()">
+    ▶ Start
+  </button>
+</div>
+
+  <div id="doorRoom" class="room bgRoom" style="display:none;">
+
+
+  <h1>🚪 Door Unlocked! </h1>
+
+  <p class="subtitle">
+    Here's a letter for you.. You will need it!
+  </p>
+
+  <div id="letterReveal">?</div>
+
+  <button
+  id="doorContinueBtn"
+  class="collectBtn"
+  onclick="collectLetterAndContinue()"
+  style="display:none;"
+>
+  🧺 Collect & Continue
+</button>
+
+</div>
+
+  <div class="room" id="quizRoom" style="display:none;">
+
+
+    <h1>Room 1: QUICK RECAP </h1>
+
+
+    <div id="quiz">
+      <h2 id="question">Question text</h2>
+
+      <div class="options">
+        <button onclick="checkAnswer(0)">Option 1</button>
+        <button onclick="checkAnswer(1)">Option 2</button>
+        <button onclick="checkAnswer(2)">Option 3</button>
+      </div>
+
+      <p id="feedback"></p>
+    </div>
+</div> 
+
+<div id="mazeRoom" class="room" style="display:none;">
+  <h1>Room 2: THE HEART MAZE</h1>
+  <p class="subtitle">Find your way to me..</p>
+
+  <div id="maze"></div>
+  <p id="mazeMessage"></p>
+</div>
+
+<div id="heartRoom" class="room" style="display:none;">
+  <h1>Room 3: FALLING FOR YOU </h1>
+  <p class="subtitle">
+    My heart keeps falling for you..Catch 10 to win, but miss 3 and you lose! 
+  </p>
+
+  <div id="gameArea">
+    <div id="basket">🧺</div>
+  </div>
+
+  <div class="heartMeterWrapper">
+
+  <!-- ❤️ Catch Progress -->
+  <div class="meterBlock">
+    <div class="meterBar">
+      <div id="heartFill"></div>
+    </div>
+    <span id="heartText">0 / 10 ❤️</span>
+  </div>
+
+  <!-- 💔 Lives -->
+  <div class="livesBlock">
+    <span id="heartLife1">❤️</span>
+    <span id="heartLife2">❤️</span>
+    <span id="heartLife3">❤️</span>
+  </div>
+
+</div>
+
+
+  <button id="retryBtn" style="display:none;" onclick="startHeartGame()">
+    Try Again
+  </button>
+</div>
+
+<div id="photoPuzzleRoom" class="room" style="display:none;">
+  <h1>Room 4: PIECE BY PIECE </h1>
+  <p class="subtitle">
+    You complete me, like a missing puzzle piece.
+  </p>
+
+  <div id="puzzleGrid"></div>
+
+  <p id="puzzleMessage"></p>
+</div>
+<div id="cupRoom" class="room" style="display:none;">
+  <h1>Room 5: EYES ON THE PRIZE?</h1>
+  <p class="subtitle">
+    Find the heart three times in a row to win!
+  </p>
+
+ 
+  <div id="cups">
+  <div class="cup">🥤</div>
+  <div class="cup">🥤</div>
+  <div class="cup">🥤</div>
+</div>
+<p id="cupMessage"></p>
+</div>
+
+<div id="crosswordRoom" class="room" style="display:none;">
+  <h1>Room 6: CROSS(WORD) MY HEART </h1>
+  <p class="subtitle">How quick can you solve our crossword?</p>
+
+  <div class="crosswordWrapper">
+    <div id="crosswordGrid"></div>
+
+<div class="clues">
+
+  <div class="clueColumn">
+    <h3>ACROSS</h3>
+    <ol>
+      <li>A body part of yours, that I am jealous of.</li> <!-- BOOTY -->
+      <li>What do you call me last thing every night?</li> <!-- PRETTIEST -->
+      <li>My favorite flavor on a latte.</li> <!-- HAZELNUT -->
+      <li>The plushie you got me for 2025 vday.</li> <!-- ZUSHI -->
+      <li>The month we met.</li> <!-- NOVEMBER -->
+    </ol>
+  </div>
+
+  <div class="clueColumn">
+    <h3>DOWN</h3>
+    <ol start="1">
+      <li>My favorite thing about your face.</li> <!-- BIGFATNOSE -->
+      <li value="6">What am I to you? Or will be, soon enough. </li> <!-- WIFEY -->
+      <li value="7">I used to hate this drink, but you made it grow on me.</li> <!-- AMERICANO -->
+      <li value="8">The place that saw us fall in love.</li> <!-- NORTHEND -->
+      <li value="9">Something we did every night in TARC.</li> <!-- VLOG -->
+    </ol>
+   </div>
+  </div> 
+</div>
+
+
+
+  <p id="crosswordMessage"></p>
+</div>
+
+
+<div id="kissRoom" class="room" style="display:none;">
+  <h1>Room 7: STEAL A KISS </h1>
+  <p class="subtitle"> Sneak in 10 kisses, but only when nobody is watching</p>
+
+  <div id="watcher">⌣</div>
+
+  <button id="kissBtn"></button>
+
+  <div class="kissMeterWrapper">
+  <div class="kissMeter">
+    <div id="kissFill"></div>
+  </div>
+  <span id="kissText">0 / 10 💋</span>
+</div>
+
+  <p id="kissMessage"></p>
+
+  <button id="kissRetryBtn" style="display:none;"> Try Again</button>
+</div>
+
+<div id="whackRoom" class="room" style="display:none;">
+  <h1>Room 8: HEART ATTACK </h1>
+  <p class="subtitle">Whack the love, beware of bombs! </p>
+
+  <div id="whackGrid">
+    <!-- 9 holes -->
+    <div class="hole"></div>
+    <div class="hole"></div>
+    <div class="hole"></div>
+    <div class="hole"></div>
+    <div class="hole"></div>
+    <div class="hole"></div>
+    <div class="hole"></div>
+    <div class="hole"></div>
+    <div class="hole"></div>
+  </div>
+
+<div class="whackMeterWrapper">
+
+  <!-- ❤️ Hearts Meter -->
+  <div class="meterBlock">
+    <div class="meterBar">
+      <div id="whackFill"></div>
+    </div>
+    <span id="whackText">0 / 10 ❤️</span>
+  </div>
+
+</div>
+
+
+  <button id="whackRetryBtn" style="display:none;">Try Again</button>
+</div>
+
+<div id="memoryRoom" class="room" style="display:none;">
+  <h1>Room 9: MEMORY CHECK </h1>
+  <p class="subtitle">
+    Can you keep track of all the nicknames I have for you? 
+    PS. You don’t get unlimited chances.
+  </p>
+
+  <p id="memoryTries">Tries left: 15</p>
+
+  <div id="memoryGrid"></div>
+
+  <p id="memoryMessage"></p>
+
+  <button
+    id="memoryRetryBtn"
+    class="tryAgainBtn"
+    style="display:none;"
+  >
+    Try Again
+  </button>
+
+  <button
+    id="memoryContinueBtn"
+    class="collectBtn"
+    style="display:none;"
+  >
+    🧺 Collect & Continue
+  </button>
+</div>
+
+<div id="finalDoorRoom" class="room" style="display:none;">
+  <h1>The Final Door</h1>
+
+  <p class="subtitle">
+    You’ve collected every letter.  
+    Now decode the message they were meant to spell.
+  </p>
+
+  <div class="finalMessage">
+    <p>
+      and every february you’ll be my
+      <span id="finalBlanks">_______</span>
+    </p>
+  </div>
+
+  <div id="letterChoices"></div>
+
+  <p id="finalError"></p>
+
+  <button
+    id="finalSubmitBtn"
+    class="collectBtn"
+  >
+    Decode the message
+  </button>
+</div>
+
+
+<script src="script.js"></script>
+</body>
+</html>
+
