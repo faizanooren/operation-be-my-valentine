@@ -12,7 +12,7 @@ function startGame() {
 const allLetters = ["V","A","L","E","N","T","I","N","E"];
 let shuffledLetters = [];
 let collectedLetters = [];
-let currentLevel = 6;
+let currentLevel = 0;
 
 function shuffleLetters() {
   shuffledLetters = [...allLetters].sort(() => Math.random() - 0.5);
@@ -1399,6 +1399,7 @@ function showFinalMessage() {
 
   }, 600);
 }
+
 
 
 
